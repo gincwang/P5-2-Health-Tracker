@@ -1,0 +1,27 @@
+body {
+    font-size: 14px;
+}
+
+#search {
+}
+
+#search-fields {
+    display:flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    margin: 5px;
+}
+
+#search-fields-bar {
+    width: 65%;
+}
+
+#search-fields-button {
+    width: 10%;
+}
+
+#search-filters {
+    display:flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}

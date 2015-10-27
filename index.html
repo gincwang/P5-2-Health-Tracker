@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name = "viewport" content = "width=device-width, initial-scale = 1">
+		<title>Health Tracker</title>
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <div>
+            <form id="search">
+                <div id="search-fields">
+                    <input id="search-fields-bar" type="text">
+                    <button id="search-fields-button">Search</button>
+                </div>
+                <div id = "search-filters">
+                    <label for="search-filters-restaurants">Restaurants</label><input id="restaurants" type="radio">
+                    <label for="search-filters-packaged-foods">Packaged Foods</label><input id="packaged-food" type="radio">
+                    <label for="search-filters-common-foods">Common Foods</label><input id="common-foods" type="radio">
+                </div>
+            </form>
+        </div>
+        <div>
+            <ul id="list">
+            </ul>
+        </div>
+        <div>
+            <div id="store">
+            </div>
+        </div>
+
+        <script src="node_modules/mustache/mustache.min.js"></script>
+        <script src="bower_components/jquery/dist/jquery.min.js"></script>
+        <script src="bower_components/underscore/underscore-min.js"></script>
+        <script src="bower_components/backbone/backbone-min.js"></script>
+        <script src="bower_components/firebase/firebase.js"></script>
+        <script src="bower_components/backbonefire/dist/backbonefire.min.js"></script>
+        <script src="js/models/food.js"></script>
+        <script src="js/views/food-view.js"></script>
+        <script src="js/app.js"></script>
+    </body>
+</html
