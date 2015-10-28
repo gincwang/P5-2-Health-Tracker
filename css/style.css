@@ -1,9 +1,12 @@
 body {
     font-size: 14px;
+    margin: 0px;
 }
 
 #search {
-    background-color: white;
+    padding: 20px;
+    background-color: #F2A0B0;
+    border: 1px solid gray;
 }
 
 #search-fields {
@@ -11,14 +14,20 @@ body {
     flex-flow: row wrap;
     justify-content: center;
     margin: 5px;
+    height: 30px;
 }
 
 #search-fields-bar {
     width: 65%;
+    padding: 8px 12px;
+    font-size: 14px;
+    border: 1px solid lightgray;
+    border-radius: 3px;
 }
 
 #search-fields-button {
     width: 10%;
+    font-size: 14px;
 }
 
 #search-filters {
@@ -28,20 +37,30 @@ body {
 }
 
 #main{
-    margin-top: 40px;
+    background-color: #B1E598;
+    padding: 40px 0px;
     display:flex;
     flex-flow: row wrap;
 }
 
 #list {
     width: 30%;
-    background-color: #E6E6E6;
-    padding: 0;
-    margin-left: 20px;
+    max-height: 734px;
+    overflow-y: auto;
+
 }
 
 .food-view {
-    border: 1px solid black;
+    background-color: #7FCE59;
+    border-radius: 5px;
+}
+
+.food-view:nth-child(odd) {
+    background-color: #5CB831;
+}
+
+.food-view {
+    border: 1px solid lightgray;
     list-style-type: none;
     padding: 10px;
     min-height: 50px;
@@ -52,6 +71,7 @@ body {
 
 .item-descriptions {
 }
+
 
 .item-name {
     font-size: 17px;
@@ -64,12 +84,12 @@ body {
 }
 
 .nutrition {
-    width: 50px;
-    min-width: 50px;
+    min-width: 80px;
     align-self: center;
 }
 
 .calorie {
+    width: 50px;
 }
 
 #store {
