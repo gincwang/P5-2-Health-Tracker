@@ -7,25 +7,27 @@
         <link rel="stylesheet" href="css/style.css">
     </head>
     <body>
-        <div>
-            <form id="search">
-                <div id="search-fields">
-                    <input id="search-fields-bar" type="text">
-                    <button id="search-fields-button">Search</button>
-                </div>
-                <div id = "search-filters">
-                    <label for="search-filters-restaurants">Restaurants</label><input id="restaurants" type="radio">
-                    <label for="search-filters-packaged-foods">Packaged Foods</label><input id="packaged-food" type="radio">
-                    <label for="search-filters-common-foods">Common Foods</label><input id="common-foods" type="radio">
-                </div>
-            </form>
-        </div>
-        <div id="main">
-            <ul id="list">
-            </ul>
-            <div id="store"> Here are your items in the health store
+        <section id="foodApp">
+            <div id="search">
+                <form>
+                    <div id="search-fields">
+                        <input id="search-fields-bar" type="text">
+                        <button id="search-fields-button">Search</button>
+                    </div>
+                    <div id = "search-filters">
+                        <label for="search-filters-restaurants">Restaurants</label><input id="restaurants" type="radio">
+                        <label for="search-filters-packaged-foods">Packaged Foods</label><input id="packaged-food" type="radio">
+                        <label for="search-filters-common-foods">Common Foods</label><input id="common-foods" type="radio">
+                    </div>
+                </form>
             </div>
-        </div>
+            <div id="main">
+                <ul id="list">
+                </ul>
+                <div id="store"><span> Here are your items in the health store </span>
+                </div>
+            </div>
+        </section>
 
 
         <script src="node_modules/mustache/mustache.min.js"></script>
@@ -38,6 +40,7 @@
         <script src="js/collections/foodList.js"></script>
         <script src="js/views/food-view.js"></script>
         <script src="js/views/foodList-view.js"></script>
+        <script src="js/views/app-view.js"></script>
         <script src="js/app.js"></script>
     </body>
 </html

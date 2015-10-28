@@ -44,15 +44,32 @@ body {
     border: 1px solid black;
     list-style-type: none;
     padding: 10px;
+    min-height: 50px;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+}
+
+.item-descriptions {
 }
 
 .item-name {
     font-size: 17px;
     font-weight: bold;
+    margin: 0px 0px 10px 0px;
+}
+
+.brand-name {
+    margin: 0px;
+}
+
+.nutrition {
+    width: 50px;
+    min-width: 50px;
+    align-self: center;
 }
 
 .calorie {
-    float: right;
 }
 
 #store {
