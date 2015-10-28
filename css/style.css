@@ -3,6 +3,7 @@ body {
 }
 
 #search {
+    background-color: white;
 }
 
 #search-fields {
@@ -24,4 +25,36 @@ body {
     display:flex;
     flex-flow: row wrap;
     justify-content: center;
+}
+
+#main{
+    margin-top: 40px;
+    display:flex;
+    flex-flow: row wrap;
+}
+
+#list {
+    width: 30%;
+    background-color: #E6E6E6;
+    padding: 0;
+    margin-left: 20px;
+}
+
+.food-view {
+    border: 1px solid black;
+    list-style-type: none;
+    padding: 10px;
+}
+
+.item-name {
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.calorie {
+    float: right;
+}
+
+#store {
+    width: 65%;
 }
