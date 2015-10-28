@@ -3,7 +3,9 @@ var app = app || {};
 $(function(){
     'use strict';
 
-    var food = new app.Food();
-    var view = new app.FoodView({model: food});
-    console.log(view.render().el);
+    var foodList = new app.FoodList();
+    foodList.push({brand_name: "Mcdonalds", item_name: "McChicken"});
+    foodList.push({brand_name: "Chipotle", item_name: "Burrito Bowl"});
+    var foodListView = new app.FoodListView({collection: foodList});
+    foodListView.render();
 });
