@@ -17,6 +17,11 @@ var app = app || {};
 
         events: {
             "click #search-fields-button": "sendAjax"
+            //"click .add-button": "addFoodToStore"
+        },
+
+        render: function(){
+            this.foodListView.render();
         },
 
         sendAjax: function(e) {
@@ -60,8 +65,8 @@ var app = app || {};
 
         },
 
-        render: function(){
-            this.foodListView.render();
+        addFoodToStore: function(e) {
+            console.log(e.target);
         }
 
     });
