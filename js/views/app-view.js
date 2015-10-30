@@ -18,6 +18,7 @@ var app = app || {};
 
         events: {
             "click #search-fields-button": "sendAjax",
+            "click #search-fields-delete-button": "deleteResults",
             "click .add-button": "addFoodToStore",
             "click .remove-button": "removeFoodFromStore"
         },
@@ -68,6 +69,12 @@ var app = app || {};
             var index = $(e.target).parent().parent().index();
             var food = this.foodListView.collection.at(index);
             this.foodStoreListView.collection.create(food.attributes);
+        },
+
+        deleteResults: function(e) {
+            e.preventDefault();
+            this.foodListView.collection.reset();
+            $("#search-fields-bar").val("");
         }
 
     });
