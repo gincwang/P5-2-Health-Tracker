@@ -31,9 +31,20 @@ body {
     border-radius: 3px;
 }
 
+#search-fields-delete-button {
+    background-color: transparent;
+    border-style: none;
+    margin-left: -25px;
+}
+
+#search-fields-delete-button:hover {
+    background-color: #FF6B6B;
+}
+
 #search-fields-button {
     width: 10%;
     font-size: 14px;
+    margin: 0 0 0 10px;
 }
 
 #search-filters {

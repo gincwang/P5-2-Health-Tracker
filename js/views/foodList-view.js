@@ -33,7 +33,7 @@ var app = app || {};
                     calories += element.attributes.nf_calories;
                 });
                 var items = (this.collection.length > 1) ? "items" : "item";
-                $("#total").html("<h3 class='total-price'>Total: " + calories.toString() + " Calories (" + this.collection.length + " " + items + ")</h3>");
+                $("#total").html("<h2 class='total-price'>Total: " + calories.toString() + " Calories (" + this.collection.length + " " + items + ")</h2>");
             }else {
                 //render each list item
                 this.collection.forEach(this.addFood, this);
