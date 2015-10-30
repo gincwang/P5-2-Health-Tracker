@@ -10,7 +10,7 @@ body {
 
 #search {
     padding: 20px;
-    background-color: #B1E598;
+    background-color: #77D5D5;
     border: 1px solid gray;
     max-height: 101px;
 }
@@ -45,7 +45,7 @@ body {
 #main{
     max-height: 100%;
     background-color: white;
-    padding: 40px 0px 80px;
+    padding: 0px 0px 80px;
     display:flex;
     flex-flow: row wrap;
 }
@@ -55,29 +55,29 @@ body {
     overflow-y: auto;
     margin: 0px;
     max-height: 100%;
-
+    padding: 25px;
 }
 
 .food-view {
-    background-color: #7FCE59;
+    background-color: #3DCD3D;
     border-radius: 5px;
 }
 
 .food-view:nth-child(odd) {
-    background-color: #5CB831;
+    background-color: #83EA83;
 }
 
 .food-view {
     border: 1px solid lightgray;
     list-style-type: none;
     padding: 10px;
-    min-height: 50px;
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-between;
+    min-height: 60px;
+    display: block;
 }
 
 .item-descriptions {
+    float: left;
+    margin-right: 90px;
 }
 
 
@@ -92,8 +92,9 @@ body {
 }
 
 .nutrition {
-    min-width: 80px;
-    align-self: center;
+    margin-top: 20px;
+    margin-left: -90px;
+    float: right;
 }
 
 .calorie {
@@ -105,14 +106,46 @@ body {
 }
 
 #shelve {
+    list-style-type: none;
     margin-bottom: 70px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+}
+
+.food-store-view {
+    margin: 10px;
+    padding: 10px;
+    width: 150px;
+    height: 150px;
+    text-align: left;
+    border-radius: 5px;
+    border: 1px solid lightgray;
+    background-color: #FF8F8F;
+    position: relative;
+}
+
+.remove-btn-wrapper {
+    position: absolute;
+    bottom: 15px;
+    left: 50px;
+}
+
+.remove-button {
+    font-size: 14px;
 }
 
 #total {
-    height: 70px;
-    min-height: 70px;
+    display: table;
+    margin: 0px auto;
 }
 
+.total-price {
+    padding: 15px 25px;
+    background-color: #FFAE6B;
+    border-radius: 15px;
+    border: 3px solid #E97E25;
+}
 
 footer {
     position: fixed;
@@ -120,6 +153,6 @@ footer {
     height: 40px;
     border: 1px solid lightgray;
     width: 100%;
-    background-color: #B1E598;
+    background-color: #77D5D5;
     text-align: center;
 }
