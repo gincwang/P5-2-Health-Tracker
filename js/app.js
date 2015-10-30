@@ -2,7 +2,6 @@ var app = app || {};
 
 $(function(){
     'use strict';
-
-    var appView = new app.AppView();
-    appView.render();
+    var foodListFire = new app.FoodListFire();
+    var appView = new app.AppView({storeCollection: foodListFire});
 });

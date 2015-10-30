@@ -8,7 +8,14 @@ var app = app || {};
     //----------
     app.FoodListFire = Backbone.Firebase.Collection.extend({
         model: app.Food,
-        url: "https://health-tracker-gcw.firebaseio.com/"
+
+        url: "https://health-tracker-gcw.firebaseio.com/",
+
+        getCalories: function(){
+            var calories = 0;
+            console.log(this.map(function(model){return model.nf_calories}));
+            return calories.toString();
+        }
     });
 
 })();
