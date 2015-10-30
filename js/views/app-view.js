@@ -19,6 +19,8 @@ var app = app || {};
         events: {
             "click #search-fields-button": "sendAjax",
             "click #search-fields-delete-button": "deleteResults",
+            "focusin #search-fields-bar": "addStyles",
+            "click #store": "removeStyles",
             "click .add-button": "addFoodToStore",
             "click .remove-button": "removeFoodFromStore"
         },
@@ -48,7 +50,8 @@ var app = app || {};
                     if(response.hits.length > 0){
                         //clear current collection
                         _.each(response.hits, function(element, index, list){
-                            this.foodListView.collection.push({brand_name: element.fields.brand_name,
+                            this.foodListView.collection.push({
+                                                brand_name: element.fields.brand_name,
                                                 item_name: element.fields.item_name,
                                                 nf_calories: element.fields.nf_calories,
                                             }, {silent: true});
@@ -75,6 +78,16 @@ var app = app || {};
             e.preventDefault();
             this.foodListView.collection.reset();
             $("#search-fields-bar").val("");
+        },
+
+        addStyles: function(e) {
+            $("#list").addClass("show");
+            $("#store").addClass("show");
+        },
+
+        removeStyles: function(e) {
+            $("#list").removeClass("show");
+            $("#store").removeClass("show");
         }
 
     });

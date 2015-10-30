@@ -38,7 +38,7 @@ body {
 }
 
 #search-fields-delete-button:hover {
-    background-color: #FF6B6B;
+    background-color: #FF8F8F;
 }
 
 #search-fields-button {
@@ -58,15 +58,21 @@ body {
     background-color: white;
     padding: 0px 0px 80px;
     display:flex;
-    flex-flow: row wrap;
+    flex-flow: row nowrap;
 }
 
 #list {
-    width: 30%;
+    transform: translateX(-500px);
+    width: 400px;
     overflow-y: auto;
     margin: 0px;
     max-height: 100%;
     padding: 25px;
+    position: absolute;
+}
+
+#list.show{
+    transform: translateX(0px);
 }
 
 .food-view {
@@ -113,7 +119,14 @@ body {
 }
 
 #store {
-    width: 65%;
+    width: 100%;
+    left: 0px;
+    position: absolute;
+}
+
+#store.show {
+    margin-left: 450px;
+    width: auto;
 }
 
 #shelve {
