@@ -30,7 +30,7 @@ var app = app || {};
                 //render summary text
                 var calories = 0;
                 this.collection.forEach(function(element){
-                    calories += element.attributes.nf_calories;
+                    calories += element.attributes.nf_calories * element.attributes.quantity;
                 });
                 var items = (this.collection.length > 1) ? "items" : "item";
                 $("#total").html("<h2 class='total-price'>Total: " + calories.toString() + " Calories (" + this.collection.length + " " + items + ")</h2>");

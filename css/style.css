@@ -173,14 +173,18 @@ button:hover {
 
 }
 
-.quantity-select {
-    background-color: white;
+.select-label {
     position: absolute;
-    bottom: 17px;
+    right: 35px;
+    bottom: 45px;
+}
+
+.quantity-select {
+    background-color: #F5F5F5;
+    position: absolute;
+    bottom: 16px;
     right: 25px;
-    font-size: 14px;
-
-
+    font-size: 13px;
 }
 
 .remove-btn-wrapper {

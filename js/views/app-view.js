@@ -80,6 +80,7 @@ var app = app || {};
             $("#search-fields-bar").val("");
         },
 
+        //slide side list from left
         addStyles: function(e) {
             $("#list").addClass("show");
             $("#store").addClass("show");

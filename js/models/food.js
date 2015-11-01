@@ -11,7 +11,8 @@ var app = app || {};
             "brand_name": "Food Corp",
             "item_name": "Food#1",
             "nf_calories": 50,
-            "ng_serving_weight_grams": 300
+            "ng_serving_weight_grams": 300,
+            "quantity": 1
         }
     });
 
