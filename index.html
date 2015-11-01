@@ -4,6 +4,7 @@
         <meta charset="utf-8">
         <meta name = "viewport" content = "width=device-width, initial-scale = 1">
 		<title>Health Tracker</title>
+        <link href='https://fonts.googleapis.com/css?family=Tenor+Sans' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="css/style.css">
     </head>
     <body>
@@ -11,14 +12,9 @@
             <div id="search">
                 <form>
                     <div id="search-fields">
-                        <input id="search-fields-bar" type="text">
-                        <button type='button' id="search-fields-delete-button">X</button>
+                        <input id="search-fields-bar" placeholder="Search for food here.." type="text">
+                        <button type='button' id="search-fields-delete-button">x</button>
                         <button id="search-fields-button">Search</button>
-                    </div>
-                    <div id = "search-filters">
-                        <label for="search-filters-restaurants">Restaurants</label><input id="restaurants" type="radio">
-                        <label for="search-filters-packaged-foods">Packaged Foods</label><input id="packaged-food" type="radio">
-                        <label for="search-filters-common-foods">Common Foods</label><input id="common-foods" type="radio">
                     </div>
                 </form>
             </div>
@@ -26,6 +22,7 @@
                 <ul id="list">
                 </ul>
                 <div id="store">
+                    <h2>Shopping Cart</h2>
                     <ul id="shelve">
                     </ul>
                     <div id='total'>

@@ -1,11 +1,24 @@
 html {
     height: 100%;
+    font-family: 'Tenor Sans', sans-serif;
 }
 
 body {
     font-size: 14px;
     margin: 0px;
     height: 100%;
+}
+
+button {
+    font-size: 20px;
+    font-family: 'Tenor Sans', sans-serif;
+    border-radius: 5px;
+    border: none;
+    background-color: #F5F5F5;
+}
+
+button:hover {
+    background-color: #C9C9C9;
 }
 
 #search {
@@ -20,15 +33,14 @@ body {
     flex-flow: row wrap;
     justify-content: center;
     margin: 5px;
-    height: 30px;
 }
 
 #search-fields-bar {
     width: 65%;
     padding: 8px 12px;
-    font-size: 14px;
+    font-size: 17px;
     border: 1px solid lightgray;
-    border-radius: 3px;
+    border-radius: 5px;
 }
 
 #search-fields-delete-button {
@@ -73,6 +85,7 @@ body {
 
 #list.show{
     transform: translateX(0px);
+    transition: 0.3s;
 }
 
 .food-view {
@@ -94,12 +107,12 @@ body {
 
 .item-descriptions {
     float: left;
-    margin-right: 90px;
+    margin-right: 105px;
 }
 
 
 .item-name {
-    font-size: 17px;
+    font-size: 15px;
     font-weight: bold;
     margin: 0px 0px 10px 0px;
 }
@@ -110,7 +123,7 @@ body {
 
 .nutrition {
     margin-top: 20px;
-    margin-left: -90px;
+    margin-left: -105px;
     float: right;
 }
 
@@ -131,7 +144,6 @@ body {
 
 #shelve {
     list-style-type: none;
-    margin-bottom: 70px;
     display: flex;
     flex-flow: row wrap;
     justify-content: flex-start;
@@ -140,35 +152,60 @@ body {
 .food-store-view {
     margin: 10px;
     padding: 10px;
-    width: 150px;
+    width: 200px;
     height: 150px;
     text-align: left;
-    border-radius: 5px;
+    border-radius: 20px;
     border: 1px solid lightgray;
     background-color: #FF8F8F;
     position: relative;
 }
 
+.p-calories {
+    background-color: #E92525;
+    color: white;
+    text-align: center;
+    border-radius: 5px;
+    padding: 5px 15px;
+    position: absolute;
+    bottom: 0px;
+    left: 25px;
+
+}
+
+.quantity-select {
+    background-color: white;
+    position: absolute;
+    bottom: 17px;
+    right: 25px;
+    font-size: 14px;
+
+
+}
+
 .remove-btn-wrapper {
     position: absolute;
-    bottom: 15px;
-    left: 50px;
+    top: -8px;
+    left: 210px;
 }
 
 .remove-button {
+    background-color: lightgray;
     font-size: 14px;
+    border-radius: 10px;
+    padding: 2px 7px 3px 7px;
 }
 
 #total {
     display: table;
-    margin: 0px auto;
+    margin: 0px auto 70px auto;
 }
 
 .total-price {
     padding: 15px 25px;
     background-color: #FFAE6B;
-    border-radius: 15px;
-    border: 3px solid #E97E25;
+    border-radius: 20px;
+    border: 7px solid #E97E25;
 }
 
 footer {
