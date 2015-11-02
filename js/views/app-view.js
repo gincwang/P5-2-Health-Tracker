@@ -9,6 +9,7 @@ var app = app || {};
         initialize: function(options){
             //initialize store view with firebase collection
             this.foodStoreListView = new app.FoodListView({collection: options.storeCollection, el: '#shelve'});
+            this.foodStoreListView.render();    //make sure the store renders even when Firebase is empty
 
             //initialize list query view
             var foodList = new app.FoodList();
@@ -37,7 +38,7 @@ var app = app || {};
             if(input){
                 var appID = "db85c300";
                 var appKey = "58eea2e9289fa4e28d86c6baa320e03f";
-                var url = "https://api.nutritionix.com/v1_1/search/" + input + "?results=0:20&fields=item_name,brand_name,item_id,nf_calories&appId=" + appID + "&appKey=" + appKey;
+                var url = "https://api.nutritionix.com/v1_1/search/" + input + "?results=0:15&fields=item_name,brand_name,item_id,nf_calories&appId=" + appID + "&appKey=" + appKey;
                 //reset the collection first before ajax request
                 this.foodListView.collection.reset();
 
