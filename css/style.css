@@ -6,8 +6,6 @@ html {
 body {
     font-size: 14px;
     margin: 0px;
-    height: 100%;
-    overflow-x: hidden;
 }
 
 button {
@@ -23,19 +21,23 @@ button:hover {
     border: 1px solid gray;
 }
 
+#foodApp {
+    display: flex;
+    flex-flow: row wrap;
+}
+
 #search {
     padding: 20px;
     background-color: #77D5D5;
     border: 1px solid gray;
-    max-height: 101px;
-    width: 100%;
+    flex: 1 100%;
 }
 
 #search-fields {
     display:flex;
     flex-flow: row wrap;
     justify-content: center;
-    margin: 5px;
+    margin: 5px 0;
 }
 
 #search-fields-bar {
@@ -68,22 +70,17 @@ button:hover {
     justify-content: center;
 }
 
-#main{
-    max-height: 100%;
-    background-color: white;
-    display:flex;
-    flex-flow: row nowrap;
+#list-wrapper {
+    /*transform: translateX(-500px);
+    transition: 0.3s; */
+    flex: 1 auto;
+    margin: 0;
+    padding: 5px 25px;
+
 }
 
 #list {
-    transform: translateX(-500px);
-    width: 400px;
-    overflow-y: auto;
-    margin: 0px;
-    max-height: 100%;
-    padding: 25px;
-    position: absolute;
-    transition: 0.3s;
+    padding: 0;
 }
 
 #list.show{
@@ -136,16 +133,12 @@ button:hover {
 }
 
 #store {
-    width: 100%;
-    left: 0px;
-    position: absolute;
     padding: 0 15px;
-    transition: 0.3s
+    transition: 0.3s;
+    flex: 2 100%;
 }
 
 #store.show {
-    margin-left: 450px;
-    width: auto;
     transition: 0.3s;
 }
 
@@ -226,11 +219,31 @@ button:hover {
 }
 
 footer {
-    position: fixed;
-    bottom: 0px;
-    height: 40px;
     border: 1px solid lightgray;
-    width: 100%;
     background-color: #77D5D5;
     text-align: center;
+    flex: 1 100%;
 }
+/*
+@media (max-width:830px) {
+    #main {
+        flex-flow: column nowrap;
+    }
+
+    #list {
+        position:static;
+        width: 100%;
+        max-height: 400px;
+    }
+
+    #store {
+        position:static;
+        width: 100%;
+    }
+
+    #store.show {
+        margin: 0;
+        width: 100%;
+    }
+}
+*/

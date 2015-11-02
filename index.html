@@ -7,29 +7,27 @@
         <link href='https://fonts.googleapis.com/css?family=Tenor+Sans' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="css/style.css">
     </head>
-    <body>
-        <section id="foodApp">
-            <div id="search">
-                <form>
-                    <div id="search-fields">
-                        <input id="search-fields-bar" placeholder="Search for food here.." type="text">
-                        <button type='button' id="search-fields-delete-button">x</button>
-                        <button id="search-fields-button">Search</button>
-                    </div>
-                </form>
-            </div>
-            <div id="main">
-                <ul id="list">
-                </ul>
-                <div id="store">
-                    <h2>Shopping Cart</h2>
-                    <ul id="shelve">
-                    </ul>
-                    <div id='total'>
-                    </div>
+    <body id="foodApp">
+        <div id="search">
+            <form>
+                <div id="search-fields">
+                    <input id="search-fields-bar" placeholder="Search for food here.." type="text">
+                    <button type='button' id="search-fields-delete-button">x</button>
+                    <button id="search-fields-button">Search</button>
                 </div>
+            </form>
+        </div>
+        <div id="list-wrapper">
+            <ul id="list">
+            </ul>
+        </div>
+        <div id="store">
+            <h2>Shopping Cart</h2>
+            <ul id="shelve">
+            </ul>
+            <div id='total'>
             </div>
-        </section>
+        </div>
         <footer>
             <p>Nutritional Information Powered by <a target="_blank" href='http://www.nutritionix.com/api'>Nutritionix API</a></p>
         </footer>
