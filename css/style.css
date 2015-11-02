@@ -19,6 +19,7 @@ button {
 
 button:hover {
     background-color: #C9C9C9;
+    border: 1px solid gray;
 }
 
 #search {
