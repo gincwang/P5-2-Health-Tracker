@@ -83,12 +83,12 @@ var app = app || {};
 
         //slide side list from left
         addStyles: function(e) {
-            $("#list").addClass("show");
+            $("#list-wrapper").addClass("show");
             $("#store").addClass("show");
         },
 
         removeStyles: function(e) {
-            $("#list").removeClass("show");
+            $("#list-wrapper").removeClass("show");
             $("#store").removeClass("show");
         }
 

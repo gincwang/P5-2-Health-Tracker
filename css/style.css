@@ -1,11 +1,19 @@
 html {
+    width: 100%;
     height: 100%;
     font-family: 'Tenor Sans', sans-serif;
 }
 
 body {
+    width: 100%;
+    height: 100%;
     font-size: 14px;
     margin: 0px;
+}
+
+main {
+    width: 100%;
+    height: 100%;
 }
 
 button {
@@ -22,15 +30,16 @@ button:hover {
 }
 
 #foodApp {
-    display: flex;
-    flex-flow: row wrap;
+    /*display: flex;
+    flex-flow: row wrap;*/
 }
 
 #search {
+    width: 100%;
+    height: 50px;
     padding: 20px;
     background-color: #77D5D5;
     border: 1px solid gray;
-    flex: 1 100%;
 }
 
 #search-fields {
@@ -71,21 +80,22 @@ button:hover {
 }
 
 #list-wrapper {
-    /*transform: translateX(-500px);
-    transition: 0.3s; */
-    flex: 1 auto;
+    max-width: 430px;
+    transform: translateX(-480px);
+    transition: 0.3s;
     margin: 0;
     padding: 5px 25px;
+    position: absolute;
+    z-index: 2;
+}
 
+#list-wrapper.show{
+    transform: translateX(0px);
+    transition: 0.3s;
 }
 
 #list {
     padding: 0;
-}
-
-#list.show{
-    transform: translateX(0px);
-    transition: 0.3s;
 }
 
 .food-view {
@@ -135,11 +145,7 @@ button:hover {
 #store {
     padding: 0 15px;
     transition: 0.3s;
-    flex: 2 100%;
-}
-
-#store.show {
-    transition: 0.3s;
+    max-width: 1110px;
 }
 
 #shelve {
@@ -222,28 +228,59 @@ footer {
     border: 1px solid lightgray;
     background-color: #77D5D5;
     text-align: center;
-    flex: 1 100%;
+    position: fixed;
+    width: 100%;
+    bottom: 0px;
+    z-index: 1;
 }
-/*
-@media (max-width:830px) {
-    #main {
-        flex-flow: column nowrap;
+
+@media screen and (min-width: 975px) {
+    #foodApp {
+        display: flex;
+        flex-flow: row wrap;
     }
 
-    #list {
-        position:static;
-        width: 100%;
-        max-height: 400px;
+    #list-wrapper {
+        position: relative;
+        transform: translateX(0px);
     }
 
     #store {
-        position:static;
-        width: 100%;
+        flex: 1 0px;
     }
 
-    #store.show {
-        margin: 0;
-        width: 100%;
+}
+
+@media screen and (max-width: 550px){
+    #list-wrapper {
+        padding: 0 5px;
     }
 }
-*/
+
+/*google materials icon css rules*/
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;  /* Preferred icon size */
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: 'liga';
+}
