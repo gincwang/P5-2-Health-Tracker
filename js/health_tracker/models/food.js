@@ -1,12 +1,12 @@
 
-var app = app || {};
-
 (function(){
     'use strict';
 
     //Food Model
     //----------
-    app.Food = Backbone.Model.extend({
+
+    HealthTracker.Models.Food = Backbone.Model.extend({
+
         defaults: {
             "brand_name": "Food Corp",
             "item_name": "Food#1",
@@ -15,5 +15,4 @@ var app = app || {};
             "quantity": 1
         }
     });
-
 })();

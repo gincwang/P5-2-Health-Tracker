@@ -1,19 +1,27 @@
-var app = app || {};
 
 (function(){
     'use strict';
 
-    app.FoodStoreView = Backbone.View.extend({
+    HealthTracker.Views.FoodStoreView = Backbone.View.extend({
         initialize: function () {
-            this.listenTo(this.model, "change", this.render);
             this.selectOPtions = {options: [
                 {value: 1, text: 1, selected: false},
                 {value: 2, text: 2, selected: false},
                 {value: 3, text: 3, selected: false},
                 {value: 4, text: 4, selected: false},
                 {value: 5, text: 5, selected: false},
+                {value: 6, text: 6, selected: false},
+                {value: 7, text: 7, selected: false},
+                {value: 8, text: 8, selected: false},
+                {value: 9, text: 9, selected: false},
+                {value: 10, text: 10, selected: false},
             ]};
+            //initialize default selected option
             this.selectOPtions.options[this.model.get('quantity') - 1]["selected"] = true;
+        },
+
+        events: {
+            "change select": "changeQuantity"
         },
 
         tagName: 'li',
@@ -35,17 +43,16 @@ var app = app || {};
         },
 
         render: function(){
-            this.$el.html(Mustache.to_html(this.template.main, this.model.toJSON()) + Mustache.to_html(this.template.select, this.selectOPtions));
+            this.$el.html(Mustache.to_html(this.template.main, this.model.toJSON()) +
+                            Mustache.to_html(this.template.select, this.selectOPtions));
             return this;
         },
 
-        events: {
-            "change select": "changeQuantity"
-        },
-
         changeQuantity: function(e) {
+            //get number of selected value
             var num = $(e.target).val();
-            this.model.set({"quantity": num});
+
+            //update the template strings
             _.each(this.selectOPtions.options, function(element, index, list){
                 if(index === num){
                     element.selected = true;
@@ -54,9 +61,9 @@ var app = app || {};
                 }
             });
 
+            //save to database
+            this.model.set('quantity', num);
         }
-
-
     });
 
 
