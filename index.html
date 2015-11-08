@@ -7,17 +7,17 @@
         <link href='https://fonts.googleapis.com/css?family=Tenor+Sans' rel='stylesheet' type='text/css'>
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link rel="stylesheet" href="css/style.css">
+
+        <link rel="shortcut icon" type="image/png" href="jasmine/lib/jasmine-2.3.4/jasmine_favicon.png">
+        <link rel="stylesheet" type="text/css" href="jasmine/lib/jasmine-2.3.4/jasmine.css">
+
+        <script type="text/javascript" src="jasmine/lib/jasmine-2.3.4/jasmine.js"></script>
+        <script type="text/javascript" src="jasmine/lib/jasmine-2.3.4/jasmine-html.js"></script>
+        <script type="text/javascript" src="jasmine/lib/jasmine-2.3.4/boot.js"></script>
     </head>
     <body>
         <main id="foodApp">
             <div id="search">
-                <form>
-                    <div id="search-fields">
-                        <input id="search-fields-bar" placeholder="Search for food here.." type="text">
-                        <button type='button' id="search-fields-delete-button">x</button>
-                        <button id="search-fields-button"><i class="material-icons">search</i></button>
-                    </div>
-                </form>
             </div>
             <div id="list-wrapper">
                 <ul id="list">
@@ -35,20 +35,27 @@
             <p>Nutritional Information Powered by <a target="_blank" href='http://www.nutritionix.com/api'>Nutritionix API</a></p>
         </footer>
 
-
+        <!--loads dependencies-->
         <script src="node_modules/mustache/mustache.min.js"></script>
         <script src="bower_components/jquery/dist/jquery.min.js"></script>
         <script src="bower_components/underscore/underscore-min.js"></script>
         <script src="bower_components/backbone/backbone-min.js"></script>
         <script src="bower_components/firebase/firebase.js"></script>
         <script src="bower_components/backbonefire/dist/backbonefire.min.js"></script>
-        <script src="js/models/food.js"></script>
-        <script src="js/collections/foodList.js"></script>
-        <script src="js/collections/foodListFire.js"></script>
-        <script src="js/views/food-view.js"></script>
-        <script src="js/views/food-store-view.js"></script>
-        <script src="js/views/foodList-view.js"></script>
-        <script src="js/views/app-view.js"></script>
-        <script src="js/app.js"></script>
+        <!--loads app asset-->
+        <script src="js/health_tracker/app.js"></script>
+        <script src="js/health_tracker/models/food.js"></script>
+        <script src="js/health_tracker/collections/foodList.js"></script>
+        <script src="js/health_tracker/collections/foodListFire.js"></script>
+        <script src="js/health_tracker/views/search-view.js"></script>
+        <script src="js/health_tracker/views/food-view.js"></script>
+        <script src="js/health_tracker/views/foodList-view.js"></script>
+        <script src="js/health_tracker/views/store-food-view.js"></script>
+        <script src="js/health_tracker/views/store-foodList-view.js"></script>
+        <script src="js/health_tracker/views/app-view.js"></script>
+        <script src="js/health_tracker/setup.js"></script>
+        <!--loads jasmine test files-->
+        <script src="jasmine/spec/modelSpec.js"></script>
+        <script src="jasmine/spec/collectionSpec.js"></script>
     </body>
 </html

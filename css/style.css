@@ -73,10 +73,8 @@ button:hover {
     margin: 0 0 0 10px;
 }
 
-#search-filters {
-    display:flex;
-    flex-flow: row wrap;
-    justify-content: center;
+#date-fields {
+    text-align: center;
 }
 
 #list-wrapper {
