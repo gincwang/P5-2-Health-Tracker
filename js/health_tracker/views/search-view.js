@@ -27,12 +27,13 @@ var HealthTracker = HealthTracker || {
                         '<button id="search-fields-button"><i class="material-icons">search</i></button>' +
                     '</div>' +
                     '<div id="date-fields">' +
-                        '<input id="datePicker" type="date" max="{{ date }}"' +
+                        '<input id="date-picker" type="date" max="{{ date }}"' +
                     '</div>' +
                  '</form>',
 
         render: function(){
             this.$el.html(Mustache.to_html(this.template, this.date));
+            $("#date-picker").val(this.date.date);
             return this;
         },
 
