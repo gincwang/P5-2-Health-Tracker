@@ -20,6 +20,7 @@
         },
 
         render: function(){
+            console.log("render");
 
             this.$el.empty();
 

@@ -18,13 +18,12 @@ $(function(){
 
 
 
-    HealthTracker.collection = {
+    HealthTracker.collections = {
         foodList: new HealthTracker.Collections.FoodList(),
         foodListFire: new HealthTracker.Collections.FoodListFire([],{date: today})
     };
 
-    console.log(HealthTracker.collection.foodListFire);
-    HealthTracker.view = new HealthTracker.Views.AppView({data: HealthTracker.collection, date: today});
+    HealthTracker.view = new HealthTracker.Views.AppView({data: HealthTracker.collections, date: today});
     HealthTracker.view.render();
 
 });

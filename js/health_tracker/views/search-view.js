@@ -1,10 +1,3 @@
-var HealthTracker = HealthTracker || {
-    Models: {},
-    Collections: {},
-    Controllers: {},
-    Views: {}
-};
-
 
 (function(){
     'use strict';
@@ -39,7 +32,8 @@ var HealthTracker = HealthTracker || {
 
         events: {
             "click #search-fields-button": "queryAPI",
-            "click #search-fields-delete-button": "deleteResults"
+            "click #search-fields-delete-button": "deleteResults",
+            "change #date-picker": "navigateDate"
         },
 
         queryAPI: function(e){
@@ -51,6 +45,10 @@ var HealthTracker = HealthTracker || {
             e.preventDefault();
             $("#search-fields-bar").val("");
             this.trigger("emptyResults");
+        },
+
+        navigateDate: function(e){
+            this.trigger("navigateDate",$(e.target).val());
         }
 
     });

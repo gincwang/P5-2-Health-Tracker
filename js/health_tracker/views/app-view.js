@@ -13,13 +13,18 @@
             this.searchView = new HealthTracker.Views.SearchView({date: options.date});
             this.foodListView = new HealthTracker.Views.FoodListView({collection: options.data.foodList});
             this.storeListView = new HealthTracker.Views.StoreFoodListView({collection: options.data.foodListFire});
+            this.router = new HealthTracker.Router({date: options.data});
             //console.log(this.storeListView.collection);
 
             //initialize event listeners from sub-views
             this.listenTo(this.searchView, "sendAjax", this.sendAjax);
             this.listenTo(this.searchView, "emptyResults", this.emptyResults);
+            this.listenTo(this.searchView, "navigateDate", this.navigateDate);
             this.listenTo(this.foodListView, "addFoodToStore", this.addFoodToStore);
             this.listenTo(this.storeListView, "removeFoodFromStore", this.removeFoodFromStore);
+            this.listenTo(this.router, "showTodayCollection", this.showTodayCollection);
+            this.listenTo(this.router, "changeCollection", this.changeCollection);
+            Backbone.history.start({pushState: true});
         },
 
         el: "#foodApp",
@@ -77,6 +82,18 @@
 
         removeFoodFromStore: function(index){
             this.data.foodListFire.remove(this.data.foodListFire.at(index));
+        },
+
+        navigateDate: function(date){
+            this.router.navigate(date, {trigger: true});
+        },
+        //gets called when date is valid
+        changeCollection: function(date){
+            console.log(date);
+            this.data.foodListFire = new HealthTracker.Collections.FoodListFire([], {date: date});
+            console.log(this.data.foodListFire);
+            this.storeListView = new HealthTracker.Views.StoreFoodListView({collection: this.data.foodListFire});
+            this.storeListView.render();
         }
 
 
