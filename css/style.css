@@ -85,6 +85,12 @@ button:hover {
     padding: 3px 0px 3px 10px;
 }
 
+#weekly-summary {
+    margin-left: 20px;
+    font-size: 1.2em;
+    padding: 5px 15px;
+}
+
 #list-wrapper {
     max-width: 430px;
     transform: translateX(-480px);
@@ -228,6 +234,43 @@ button:hover {
     background-color: #FFAE6B;
     border-radius: 20px;
     border: 7px solid #E97E25;
+}
+
+.modal-bg {
+    background-color: rgba(26, 26, 26, 0.7);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.modal {
+    position: relative;
+    width: 70%;
+    margin: 8% auto;
+    background-color: white;
+}
+
+.modal-close {
+    text-decoration: none;
+    border-radius: 15px;
+    color: white;
+    background-color: rgb(115,115,115);
+    box-shadow: 1px 1px black;
+    position: absolute;
+    right: -10px;
+    top: -10px;
+    padding: 2px 6px;
+}
+
+.modal-close:hover {
+    background-color: #00d9ff;
+}
+
+.modal-content {
+
+
 }
 
 footer {

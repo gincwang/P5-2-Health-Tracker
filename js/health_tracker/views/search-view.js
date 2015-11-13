@@ -9,6 +9,7 @@
         initialize: function(options){
             _.bindAll(this, 'render', 'queryAPI', 'deleteResults');
             this.date = {date: options.date};
+            this.modalView = new HealthTracker.Views.ModalView({el: '#chart'});
         },
 
         el: "#search",
@@ -20,7 +21,8 @@
                         '<button id="search-fields-button"><i class="material-icons">search</i></button>' +
                     '</div>' +
                     '<div id="date-fields">' +
-                        '<input id="date-picker" type="date" max="{{ date }}"' +
+                        '<input id="date-picker" type="date" max="{{ date }}">' +
+                        '<button id="weekly-summary" type="button">Weekly Summary</button>' +
                     '</div>' +
                  '</form>',
 
@@ -33,7 +35,8 @@
         events: {
             "click #search-fields-button": "queryAPI",
             "click #search-fields-delete-button": "deleteResults",
-            "change #date-picker": "navigateDate"
+            "change #date-picker": "navigateDate",
+            "click #weekly-summary": "openModal"
         },
 
         queryAPI: function(e){
@@ -49,6 +52,11 @@
 
         navigateDate: function(e){
             this.trigger("navigateDate",$(e.target).val());
+        },
+
+        openModal: function(e){
+            console.log("open modal");
+            this.modalView.render();
         }
 
     });
