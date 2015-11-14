@@ -8,7 +8,7 @@
         template:   "<div class='modal-bg'>" +
                     "<div class='modal'>" +
                         "<a href='#' class='modal-close'>X</a>" +
-                        "<div class='modal-content'>content</div>" +
+                        "<div class='modal-content' id='modal-content-chart'></div>" +
                     "</div></div>",
 
         events: {
@@ -18,7 +18,7 @@
         render: function(){
             this.$el.show();
             this.$el.html(this.template);
-            var chart = new HealthTracker.Views.ChartView({week: this.getWeekString()});
+            var chart = new HealthTracker.Views.ChartView({el: '#modal-content-chart', week: this.getWeekString()});
             chart.getWeekCalories();
             return this;
         },
