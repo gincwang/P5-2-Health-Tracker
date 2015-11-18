@@ -86,6 +86,7 @@
         emptyResults: function(){
             console.log("empty results");
             this.data.foodList.reset();
+            this.unShowList();
         },
 
         addFoodToStore: function(index){
