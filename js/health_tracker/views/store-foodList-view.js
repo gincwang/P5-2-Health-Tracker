@@ -21,7 +21,6 @@
         },
 
         render: function(){
-            console.log("render");
 
             this.$el.empty();
 
@@ -45,7 +44,6 @@
         },
 
         unShow: function(){
-            console.log("unshow");
             this.trigger("unShowList");
         },
 

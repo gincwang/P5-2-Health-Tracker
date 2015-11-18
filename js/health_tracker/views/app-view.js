@@ -40,7 +40,6 @@
 
         showList: function(){
             var $list = $("#list");
-            console.log($list.children('li'));
             if( $list.children('li').length > 0 ){
                 $('#list-wrapper, #store').addClass("show");
             }
@@ -84,7 +83,6 @@
         },
 
         emptyResults: function(){
-            console.log("empty results");
             this.data.foodList.reset();
             this.unShowList();
         },

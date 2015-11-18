@@ -57,17 +57,14 @@
         },
 
         openModal: function(e){
-            console.log("open modal");
             this.modalView.render();
         },
 
         showList: function(){
-            console.log('show');
             this.trigger("showList");
         },
 
         unShowList: function(){
-            console.log("unshow");
             this.trigger("unShowList");
         }
 
