@@ -16,6 +16,7 @@
         el: "#shelve",
 
         events: {
+            "click": "unShow",
             "click .remove-button": "removeFood",
         },
 
@@ -33,7 +34,7 @@
             var calories = this.collection.getTotalCalorie();
             var items = (this.collection.length > 1) ? "items" : "item";
             //append summary text
-            $("#total").html("<h2 class='total-price'>Total: " + calories.toString() + " Calories (" + totalItem + " " + items + ")</h2>");
+            $("#total").html("<div><h2 class='total-price'>Total: " + calories.toString() + " Calories (" + totalItem + " " + items + ")</h2></div>");
 
             return this;
         },
@@ -41,6 +42,11 @@
         renderFood: function(food){
             var foodView = new HealthTracker.Views.FoodStoreView({model: food});
             this.$el.append(foodView.render().el);
+        },
+
+        unShow: function(){
+            console.log("unshow");
+            this.trigger("unShowList");
         },
 
         removeFood: function(e){

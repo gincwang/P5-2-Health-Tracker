@@ -7,7 +7,7 @@
 
     HealthTracker.Views.SearchView = Backbone.View.extend({
         initialize: function(options){
-            _.bindAll(this, 'render', 'queryAPI', 'deleteResults');
+            _.bindAll(this, 'render', 'queryAPI', 'deleteResults', 'navigateDate', 'openModal', 'showList');
             this.date = {date: options.date};
             this.modalView = new HealthTracker.Views.ModalView({el: '#chart'});
         },
@@ -33,6 +33,8 @@
         },
 
         events: {
+            "focusin #search-fields-bar": "showList",
+            "click #date-fields": "unShowList",
             "click #search-fields-button": "queryAPI",
             "click #search-fields-delete-button": "deleteResults",
             "change #date-picker": "navigateDate",
@@ -57,6 +59,16 @@
         openModal: function(e){
             console.log("open modal");
             this.modalView.render();
+        },
+
+        showList: function(){
+            console.log('show');
+            this.trigger("showList");
+        },
+
+        unShowList: function(){
+            console.log("unshow");
+            this.trigger("unShowList");
         }
 
     });

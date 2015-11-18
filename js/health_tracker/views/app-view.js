@@ -17,6 +17,9 @@
             //console.log(this.storeListView.collection);
 
             //initialize event listeners from sub-views
+            this.listenTo(this.searchView, "showList", this.showList);
+            this.listenTo(this.searchView, "unShowList", this.unShowList);
+            this.listenTo(this.storeListView, "unShowList", this.unShowList);
             this.listenTo(this.searchView, "sendAjax", this.sendAjax);
             this.listenTo(this.searchView, "emptyResults", this.emptyResults);
             this.listenTo(this.searchView, "navigateDate", this.navigateDate);
@@ -33,6 +36,18 @@
             this.searchView.render();
             this.foodListView.render();
             this.storeListView.render();
+        },
+
+        showList: function(){
+            var $list = $("#list");
+            console.log($list.children('li'));
+            if( $list.children('li').length > 0 ){
+                $('#list-wrapper, #store').addClass("show");
+            }
+        },
+
+        unShowList: function(){
+            $('#list-wrapper, #store').removeClass("show");
         },
 
         sendAjax: function(search){
@@ -59,6 +74,7 @@
                                             }, {silent: true});
                         }, this);
                         this.foodListView.render();
+                        this.showList();
                     }
                 })
                     .fail(function(){
@@ -87,11 +103,10 @@
         navigateDate: function(date){
             this.router.navigate(date, {trigger: true});
         },
+
         //gets called when date is valid
         changeCollection: function(date){
-            console.log(date);
             this.data.foodListFire = new HealthTracker.Collections.FoodListFire([], {date: date});
-            console.log(this.data.foodListFire);
             this.storeListView = new HealthTracker.Views.StoreFoodListView({collection: this.data.foodListFire});
             this.storeListView.render();
         }
