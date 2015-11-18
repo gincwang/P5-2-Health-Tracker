@@ -50,7 +50,7 @@
 
         changeQuantity: function(e) {
             //get number of selected value
-            var num = $(e.target).val();
+            var num = parseFloat($(e.target).val());
 
             //update the template strings
             _.each(this.selectOPtions.options, function(element, index, list){
