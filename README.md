@@ -8,6 +8,12 @@ Framework/Libraries: Backbone.js, Firebase, mustache.js, Underscore.js, jQuery, 
 
 API: Nutritionix API: http://www.nutritionix.com/business/api
 
+##Usage
+If you wish to run this app on your local machine/server, please install the following dependencies via bower and node:
+```javascript
+$ bower install backbonefire --save-dev
+$ npm install mustache --save-dev
+```
 
 ##Background
 
