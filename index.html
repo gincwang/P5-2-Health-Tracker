@@ -36,6 +36,16 @@
                 <div id="list-wrapper">
                     <ul id="list">
                     </ul>
+                    <script id="food-list-template" type="text/template">
+                        <div class='item-descriptions'>
+                            <h4 class='item-name'>{{ item_name }}</h4>
+                            <h5 class='brand-name'>{{ brand_name }} </h5>
+                        </div>
+                        <div class='list-nutrition'>
+                            <span class='calorie'>{{ nf_calories }} kcal </span>
+                            <button type='button' class='add-button'> + </button>
+                        </div>
+                    </script>
                 </div>
                 <div id="store">
                     <h2>Shopping Cart</h2>
