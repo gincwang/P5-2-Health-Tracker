@@ -1,9 +1,10 @@
-
 (function(){
     'use strict';
 
-    //Food Model
-    //----------
+    /**
+      * @desc Food Model.
+      * Holds basic nutritional info on any food item.
+    */
 
     HealthTracker.Models.Food = Backbone.Model.extend({
 

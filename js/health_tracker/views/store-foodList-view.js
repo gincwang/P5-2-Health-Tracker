@@ -2,8 +2,10 @@
 (function(){
     'use strict';
 
-    //Store-FoodList View
-    //---------
+    /**
+      * @desc Store Food List View
+      * This view renders a collection of food items in the store
+    */
 
     HealthTracker.Views.StoreFoodListView = Backbone.View.extend({
 
@@ -21,7 +23,6 @@
         },
 
         render: function(){
-
             this.$el.empty();
 
             //render each store item
@@ -31,7 +32,7 @@
             //get total calories and items
             var totalItem = this.collection.getTotalItems();
             var calories = this.collection.getTotalCalorie();
-            var items = (this.collection.length > 1) ? "items" : "item";
+            var items = (totalItem > 1) ? "items" : "item";
             //append summary text
             $("#total").html("<div><h2 class='total-price'>Total: " + calories.toString() + " Calories (" + totalItem + " " + items + ")</h2></div>");
 
@@ -43,11 +44,14 @@
             this.$el.append(foodView.render().el);
         },
 
+        //Forwards intention to hide food search results when clicked
         unShow: function(){
             this.trigger("unShowList");
         },
 
+        //Forwards index of food item in store to delete by App-View
         removeFood: function(e){
+            //grab index of clicked element
             var index = $(e.target).parent().parent().index();
             this.trigger("removeFoodFromStore", index);
         }

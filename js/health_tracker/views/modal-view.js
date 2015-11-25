@@ -1,7 +1,10 @@
-
-
 (function(){
     'use strict';
+
+    /**
+      * @desc Modal View
+      * This view will render a modal containing the bar graph
+    */
 
     HealthTracker.Views.ModalView = Backbone.View.extend({
 
@@ -27,6 +30,11 @@
             this.$el.hide();
         },
 
+        /*
+         * @desc Returns a 7-element array with string dates for the past week.
+         * @param none
+         * return string array
+        */
         getWeekString: function(){
             var dates = [];
             var date = new Date();
@@ -40,6 +48,11 @@
             return dates;
         },
 
+        /*
+         * @desc convert date type to date string in YYYY-MM-DD format
+         * @param date
+         * return string
+        */
         getDateString: function(date){
             var year = date.getFullYear().toString();
             var month = (date.getMonth() + 1).toString();

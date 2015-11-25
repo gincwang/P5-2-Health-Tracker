@@ -1,10 +1,12 @@
-
-
 (function(){
     'use strict';
 
-    //App View
-    //........
+    /**
+      * @desc App View (Controller).
+      * This is the main controller of the application, which will instantiate all
+      * of its subviews and router, and listen for various events fired from its subviews.
+      *
+    */
 
     HealthTracker.Views.AppView = Backbone.View.extend({
         initialize: function(options){
@@ -14,7 +16,6 @@
             this.foodListView = new HealthTracker.Views.FoodListView({collection: options.data.foodList});
             this.storeListView = new HealthTracker.Views.StoreFoodListView({collection: options.data.foodListFire});
             this.router = new HealthTracker.Router({date: options.data});
-            //console.log(this.storeListView.collection);
 
             //initialize event listeners from sub-views
             this.listenTo(this.searchView, "showList", this.showList);
@@ -49,6 +50,12 @@
             $('#list-wrapper, #store').removeClass("show");
         },
 
+        /*
+         * @desc Fires off ajax request to nutritionix API based on search string,
+         * and populates search result list
+         * @param string
+         * return none
+        */
         sendAjax: function(search){
             if(search){
                 var appID = "db85c300";
@@ -82,11 +89,18 @@
             }
         },
 
+        //Empty ajax search results
         emptyResults: function(){
             this.data.foodList.reset();
             this.unShowList();
         },
 
+        /*
+         * @desc gets the index from food result that clicked "+" button,
+         * then adds it to the food store's collection.
+         * @param number
+         * return none
+        */
         addFoodToStore: function(index){
             //grab food model info at index
             var food = this.data.foodList.at(index);
@@ -95,15 +109,31 @@
             this.data.foodListFire.create(food.attributes);
         },
 
+        /*
+         * @desc gets the index from food store item that clicked "X" button,
+         * then remove it from food store's collection.
+         * @param number
+         * return none
+        */
         removeFoodFromStore: function(index){
             this.data.foodListFire.remove(this.data.foodListFire.at(index));
         },
 
+        /*
+         * @desc Triggers page navigation to the date specified
+         * @param string in date format: YYYY-MM-DD
+         * return none
+        */
         navigateDate: function(date){
             this.router.navigate(date, {trigger: true});
         },
 
-        //gets called when date is valid
+        /*
+         * @desc Changes the currently displayed collection in Food Store
+         * Gets called when date is valid
+         * @param string in date format: YYYY-MM-DD
+         * return none
+        */
         changeCollection: function(date){
             this.data.foodListFire = new HealthTracker.Collections.FoodListFire([], {date: date});
             this.storeListView = new HealthTracker.Views.StoreFoodListView({collection: this.data.foodListFire});

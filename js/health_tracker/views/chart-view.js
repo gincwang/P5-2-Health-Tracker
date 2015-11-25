@@ -1,6 +1,11 @@
 (function(){
     'use strict';
 
+    /**
+      * @desc Chart View
+      * This view will render a bar graph using D3 with the weekly calorie data
+    */
+
     HealthTracker.Views.ChartView = Backbone.View.extend({
         initialize: function(options){
             this.week = options.week;
@@ -95,6 +100,7 @@
 
         },
 
+        //grabs an entire week's calorie backtracking from "today"
         getWeekCalories: function(){
             this.calories = [];
             var calorie = 0;

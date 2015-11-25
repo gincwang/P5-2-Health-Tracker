@@ -1,13 +1,14 @@
-
 (function(){
     'use strict';
 
-    //FoodList View
-    //---------
+    /**
+      * @desc FoodList View
+      * This view will render all the food items returned by the ajax request
+    */
 
     HealthTracker.Views.FoodListView = Backbone.View.extend({
 
-        initialize: function(options){
+        initialize: function(){
             this.listenTo(this.collection, "change", this.render);
             this.listenTo(this.collection, "reset", this.render);
         },
@@ -32,6 +33,7 @@
             this.$el.append(foodView.render().el);
         },
 
+        // Forwards the clicked food item index to App-View to get added to Food Store
         clickAddFood: function(e){
             //grab the index of the element clicked
             var index = $(e.target).parent().parent().index();

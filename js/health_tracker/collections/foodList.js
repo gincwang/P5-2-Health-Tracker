@@ -1,22 +1,16 @@
-
 (function(){
     'use strict';
 
-    //Food Collection
-    //----------
+    /**
+      * @desc Food List Collection (Not Stored).
+      * Holds a list of food results from Nutritionix API.
+      *
+    */
+
     HealthTracker.Collections.FoodList = Backbone.Collection.extend({
 
-        model: HealthTracker.Models.Food,
-
-        getTotalCalorie: function(){
-            var list = this.map(function(a){return a.get("nf_calories") * a.get("quantity");});
-            return _.reduce(list, function(memo, num){return memo + num;});
-        },
-
-        getTotalItems: function(){
-            var list = this.map(function(a){return a.get("quantity");});
-            return _.reduce(list, function(memo, num){return memo + num;});
-        }
+        model: HealthTracker.Models.Food
+        
     });
 
 })();
