@@ -4,10 +4,16 @@
 
 Check out the app here: http://gincwang.github.io/P5-2-Health-Tracker
 
-Framework/Libraries: Backbone.js, Firebase, mustache.js, Underscore.js, jQuery, d3.js.
+Framework/Libraries: Backbone.js, Firebase, mustache.js, Underscore.js, jQuery, D3.js.
 
 API: Nutritionix API: http://www.nutritionix.com/business/api
 
+##Usage
+If you wish to run this app on your local machine/server, please install the following dependencies via bower and node:
+```javascript
+$ bower install backbonefire --save-dev
+$ npm install mustache --save-dev
+```
 
 ##Background
 
