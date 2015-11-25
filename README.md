@@ -4,7 +4,7 @@
 
 Check out the app here: http://gincwang.github.io/P5-2-Health-Tracker
 
-Framework/Libraries: Backbone.js, Firebase, mustache.js, Underscore.js, jQuery, d3.js.
+Framework/Libraries: Backbone.js, Firebase, mustache.js, Underscore.js, jQuery, D3.js.
 
 API: Nutritionix API: http://www.nutritionix.com/business/api
 
