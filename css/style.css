@@ -34,6 +34,8 @@ button:hover {
     flex-flow: column nowrap;
 }
 
+/* @Header */
+
 #search {
     width: 100%;
     height: 70px;
@@ -90,6 +92,8 @@ button:hover {
     font-size: 1.2em;
     padding: 5px 15px;
 }
+
+/* @Body */
 
 #main-content {
     display: flex;
@@ -295,6 +299,8 @@ rect:hover {
     font-size: 1.5em;
 }
 
+/* @Footer */
+
 footer {
     border: 1px solid lightgray;
     background-color: #77D5D5;
@@ -304,6 +310,9 @@ footer {
     bottom: 0px;
     z-index: 1;
 }
+
+
+/*Media Query*/
 
 @media screen and (max-width: 900px) {
     #foodApp {
@@ -341,7 +350,7 @@ footer {
 }
 
 
-
+/* @Font */
 /*google materials icon css rules*/
 .material-icons {
   font-family: 'Material Icons';
