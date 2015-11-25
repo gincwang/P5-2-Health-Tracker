@@ -18,6 +18,19 @@
     <body>
         <main id="foodApp">
             <div id="search">
+                <script id="search-template" type="text/template">
+                    <form>
+                        <div id="search-fields">
+                            <input id="search-fields-bar" placeholder="Search for food here.." type="text">
+                            <button type="button" id="search-fields-delete-button">x</button>
+                            <button id="search-fields-button"><i class="material-icons">search</i></button>
+                        </div>
+                        <div id="date-fields">
+                            <input id="date-picker" type="date" max="{{ date }}">
+                            <button id="weekly-summary" type="button">Weekly Summary</button>
+                        </div>
+                    </form>
+                </script>
             </div>
             <div id='main-content'>
                 <div id="list-wrapper">
@@ -28,6 +41,25 @@
                     <h2>Shopping Cart</h2>
                     <ul id="shelve">
                     </ul>
+                    <script id="food-main-template" type="text/template">
+                        <div>
+                            <p class="item-name">{{ item_name }}</p>
+                            <p class="brand-name">{{ brand_name }}</p>
+                            <p class="p-calories">{{ nf_calories }} Calories</p>
+                            <span class="select-label">Qty</span>
+                        </div>
+                        <div class="remove-btn-wrapper">
+                            <button type="button" class="remove-button">x</button>
+                        </div>
+                    </script>
+                    <script id="food-select-template" type="text/template">
+                        <select class="quantity-select">
+                            {{#options}}
+                                <option value={{value}} {{#selected}}selected{{/selected}}>{{text}}
+                                </option>
+                            {{/options}}
+                        </select>
+                    </script>
                     <div id='total'>
                     </div>
                 </div>
