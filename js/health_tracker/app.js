@@ -6,7 +6,6 @@
 window.HealthTracker = {
     Models: {},
     Collections: {},
-    Controllers: {},
     Views: {},
     Router: {}
 };
