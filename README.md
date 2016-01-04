@@ -19,7 +19,7 @@ $ npm install mustache --save-dev
 ##Background
 
 #### Summmary
-This is project 5-2 from Udacity's Front-End Developer Nanodegree, where we are supposed to utilize 3rd-party API to via AJAX requests, and specifically learn Backbone.js to organize our code through model-view-xxx organization. The project rubric is here: https://www.udacity.com/course/viewer#!/c-nd001/l-5030258562/m-5054019724
+This is project 5-2 from Udacity's Front-End Developer Nanodegree, where we are supposed to utilize 3rd-party API via AJAX requests, and specifically learn Backbone.js to organize our code through model-view-xxx organization. The project rubric is here: https://www.udacity.com/course/viewer#!/c-nd001/l-5030258562/m-5054019724
 
 #### Things explored
 In addition to the basic requirements, I also got to play with mustache.js (for templating inside Backbone views), d3 (for making cool plots and animating them), flexbox (as an alternative to using Bootstrap's grid systems), and for looking really hard online for how people organize their backbone apps through namespacing, separation of concerns, etc. I'm still just scratching the surface of all these technologies, but it's been loads of fun trying to get there.
