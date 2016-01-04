@@ -1,6 +1,7 @@
 # P5-2-Health-Tracker
 
 #### Want to track your total calorie intake? Use this app and add all the food you eat during the day! 
+Project 5-2 of the Frontend Developer Nanodegree. This is a project that utilizes Backbone.js to write a  calorie tracking web app that uses 3rd party API for nutritional information.
 
 Check out the app here: http://gincwang.github.io/P5-2-Health-Tracker
 
